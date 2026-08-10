@@ -1,0 +1,13 @@
+
+# Denis Server Control — server/private
+.env
+.env.*
+!.env.example
+.user.ini
+.htpasswd
+id_rsa
+id_ed25519
+*.key
+*.pem
+*.log
+*.session

@@ -1,0 +1,60 @@
+:root{--ink:#211b12;--muted:#776d5f;--paper:#f7f1e7;--cream:#ece1cf;--plum:#bd9a52;--plum2:#8e6c2d;--rose:#d8c39a;--gold:#c9a45b;--line:rgba(134,100,41,.18);--shadow:0 24px 70px rgba(18,15,10,.16)}
+body{background:var(--paper)}
+.site-header{background:rgba(10,10,9,.94);border-bottom-color:rgba(201,164,91,.24)}
+.brand{color:#f5e8c6}
+.brand strong{color:#e4c77f}
+.brand small{color:#b8aa88}
+.brand-mark{width:48px;height:48px;padding:0;overflow:hidden;border-radius:50%;background:#050505;box-shadow:0 0 0 1px rgba(201,164,91,.5),0 9px 28px rgba(0,0,0,.35)}
+.brand-mark img{width:100%;height:100%;object-fit:cover;display:block}
+.main-nav a{color:#e8deca}
+.main-nav a:after{background:var(--gold)}
+.main-nav a.active,.main-nav a:hover{color:#f1d48d}
+.menu-toggle span{background:#d8ba72}
+.button-dark{background:linear-gradient(135deg,#d5b568,#a97f35);color:#17120a;box-shadow:0 10px 28px rgba(177,135,58,.28)}
+.button-outline{border-color:rgba(183,144,70,.45);color:#8a6728}
+.hero{color:#f8edd4;background:radial-gradient(circle at 78% 22%,rgba(201,164,91,.2),transparent 29%),radial-gradient(circle at 68% 78%,rgba(201,164,91,.1),transparent 25%),linear-gradient(135deg,#090909,#17150f 64%,#252015)}
+.hero:before{color:rgba(201,164,91,.06)}
+.hero h1 em{color:#d7b766}
+.hero .hero-tagline{display:inline-block;white-space:nowrap;font-size:clamp(34px,5.8vw,72px)}
+.hero-copy{color:#d0c5ad}
+.hero-note{border-top-color:rgba(218,190,119,.22)}
+.hero-note b{color:#d8ba72}
+.hero-note span{color:#bdb19a}
+.eyebrow{color:#9a742f}
+.hero .eyebrow,.section-dark .eyebrow,.cta-panel .eyebrow{color:#d9ba70!important}
+.beauty-panel{background:radial-gradient(circle at 50% 28%,rgba(220,190,119,.28),transparent 32%),linear-gradient(155deg,#17150f,#050505);border:1px solid rgba(201,164,91,.25)}
+.beauty-panel:before{background:radial-gradient(circle at 35% 35%,#dbc27e,rgba(201,164,91,.12) 58%,transparent 60%)}
+.beauty-panel:after{background:radial-gradient(circle at 50% 50%,rgba(216,183,102,.55),rgba(201,164,91,.05) 63%,transparent 65%)}
+.panel-card{background:rgba(8,8,7,.86);border:1px solid rgba(201,164,91,.22)}
+.panel-card strong{color:#ead18e}
+.panel-card span{color:#c7baa0}
+.section-soft{background:var(--cream)}
+.section-dark{background:#0b0b0a;color:#fff7e5}
+.section-dark .section-head p{color:#c5baa3}
+.category-card,.master-card,.service-group,.content-card,.contact-item{background:#fffaf1;border-color:rgba(133,98,35,.17)}
+.category-card .icon{background:#efe3c8;color:#8f6924}
+.category-card:after{color:rgba(132,97,33,.07)}
+.text-link,.price-row b,.service-group h2{color:#8d6927}
+.master-photo{background:linear-gradient(145deg,#e7d7b7,#b99a5b)}
+.master-body small{color:#8d6927}
+.master-services span{background:#f1e6cf;color:#725526}
+.loading-card{background:linear-gradient(90deg,#eee3cf 25%,#fff9ef 37%,#eee3cf 63%);background-size:400% 100%}
+.price-row .mini-book{background:#efe3c8;color:#76561f}
+.feature-card{border-color:rgba(215,183,102,.18);background:rgba(255,255,255,.04)}
+.feature-card span{color:#c3b69c}
+.cta-panel{background:linear-gradient(135deg,#17150f,#050505 72%);border:1px solid rgba(201,164,91,.3);box-shadow:0 24px 70px rgba(0,0,0,.23)}
+.cta-panel p{color:#c9bda4}
+.page-hero{color:#f7ecd3;background:radial-gradient(circle at 80% 15%,rgba(201,164,91,.18),transparent 30%),linear-gradient(135deg,#0a0a09,#201c13)}
+.page-hero p{color:#c8bda8}
+.solar-visual{background:radial-gradient(circle at 50% 36%,#f4d58a,rgba(200,157,70,.72) 28%,rgba(18,16,11,.96) 70%),linear-gradient(135deg,#302711,#090909)}
+.map-placeholder{background:linear-gradient(145deg,#e8dcc4,#c9b17b)}
+.site-footer{background:#080808;color:#fff6df;border-top:1px solid rgba(201,164,91,.2)}
+.footer-grid p,.footer-grid span,.footer-grid a{color:#bdb19a}
+.footer-brand small{color:#a99a79}
+.footer-link{color:#d7b766!important}
+.footer-bottom{border-top-color:rgba(201,164,91,.14);color:#8f856f}
+.booking-backdrop{background:rgba(8,7,5,.78)}
+.booking-head{background:#0c0c0b;color:#f2dfad;border-bottom-color:rgba(201,164,91,.2)}
+.booking-head button{background:#272118;color:#e5c67c}
+.notice{background:#fff3db;color:#715421}
+@media(max-width:960px){.main-nav{background:#11110f;border-color:rgba(201,164,91,.25)}.main-nav a{color:#eee2ca}.main-nav a.active{background:#2c261a;color:#e9ce86}}

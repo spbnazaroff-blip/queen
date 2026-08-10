@@ -1,0 +1,30 @@
+.project-development-notice {
+  border-bottom: 1px solid rgba(185, 139, 35, .28);
+  color: #634d16;
+  background: #fff0bd;
+}
+
+.project-development-notice__inner {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-block: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.project-development-notice strong {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 11px;
+}
+
+@media (max-width: 680px) {
+  .project-development-notice__inner {
+    display: grid;
+    gap: 2px;
+    padding-inline: 4px;
+  }
+}
