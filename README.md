@@ -2,6 +2,25 @@
 
 Основной репозиторий проекта: `spbnazaroff-blip/queen`.
 
+## Статус релиза
+
+Канонический релиз Queen V5 успешно установлен 19.08.2026.
+
+- `CANONICAL_TEAM=PASS`
+- `STAFF_COUNT=6`
+- `TEST_HTTP=PASS`
+- `PRODUCTION_FILES=PASS`
+- `PRODUCTION_HTTP=PASS`
+- `RELEASE=PASS`
+
+Production document root:
+
+`/var/www/u3249400/data/www/queen.denisnazarov.online`
+
+Backup релиза:
+
+`/var/www/u3249400/data/DSCL/backups/queen-canonical-20260819_180434`
+
 ## Контуры
 
 - TEST: `https://denisnazarov.online/coding/queen/`
@@ -20,7 +39,7 @@ TEST автоматически получает `noindex,nofollow` и тест�
 5. Ангелина — `angelina`
 6. Оксана Некрасова — `oksana-nekrasova`
 
-Старые демонстрационные/прототипные мастера не являются частью канонической версии.
+Старые демонстрационные/прототипные мастера не являются частью канонической версии. Они архивируются без физического удаления, чтобы сохранить связанную историю записей.
 
 ## Связь с Clientra
 
