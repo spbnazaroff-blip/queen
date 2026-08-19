@@ -14,8 +14,16 @@ const QUEEN_PHONE = '+7 (911) 158-14-42';
 const QUEEN_PHONE_HREF = 'tel:+79111581442';
 const QUEEN_VK_URL = 'https://vk.ru/luibovstudio';
 const QUEEN_LOGO_URL = 'assets/images/brand/logo-queen.png';
-const QUEEN_SITE_URL = 'https://denisnazarov.online/coding/queen/';
-const QUEEN_SOCIAL_IMAGE_URL = 'https://denisnazarov.online/coding/queen/assets/images/og-queen.php?v=20260728-1';
+const QUEEN_PRODUCTION_HOST = 'queen.denisnazarov.online';
+const QUEEN_SITE_URL = 'https://queen.denisnazarov.online/';
+const QUEEN_SOCIAL_IMAGE_URL = 'https://queen.denisnazarov.online/assets/images/og-queen.php?v=20260728-1';
+
+function queen_is_production()
+{
+    $host = isset($_SERVER['HTTP_HOST']) ? strtolower((string)$_SERVER['HTTP_HOST']) : '';
+    $host = preg_replace('/:\d+$/', '', $host);
+    return $host === QUEEN_PRODUCTION_HOST;
+}
 
 function queen_header($title, $active)
 {
@@ -58,6 +66,10 @@ function queen_header($title, $active)
     <meta name="twitter:description" content="<?=queen_h($description)?>">
     <meta name="twitter:image" content="<?=queen_h(QUEEN_SOCIAL_IMAGE_URL)?>">
 
+    <?php if (!queen_is_production()): ?>
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <?php endif; ?>
+
     <link rel="icon" type="image/png" href="<?=queen_h(QUEEN_LOGO_URL)?>">
     <link rel="apple-touch-icon" href="<?=queen_h(QUEEN_LOGO_URL)?>">
     <link rel="stylesheet" href="assets/css/site.css?v=20260727-2">
@@ -80,12 +92,14 @@ function queen_header($title, $active)
         <button class="button button-dark header-book js-book" type="button" data-book-url="<?=queen_h(QUEEN_BOOKING_URL)?>">Записаться</button>
     </div>
 </header>
+<?php if (!queen_is_production()): ?>
 <div class="project-development-notice" role="status">
     <div class="shell project-development-notice__inner">
-        <strong>Сайт в разработке</strong>
-        <span>Основные страницы и онлайн-запись уже работают, но фотографии, тексты и отдельные сценарии ещё дополняются и проверяются.</span>
+        <strong>TEST</strong>
+        <span>Тестовая версия Queen. Production: queen.denisnazarov.online</span>
     </div>
 </div>
+<?php endif; ?>
 <main>
 <?php
 }
