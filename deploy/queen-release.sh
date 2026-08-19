@@ -18,13 +18,23 @@ for cmd in git rsync php curl readlink; do
   command -v "$cmd" >/dev/null 2>&1 || { echo "MISSING_COMMAND=$cmd"; exit 10; }
 done
 
+clone_repo() {
+  local repo="$1"
+  local dest="$2"
+  if git clone --depth 1 "git@github.com:spbnazaroff-blip/${repo}.git" "$dest"; then
+    return 0
+  fi
+  rm -rf "$dest"
+  git clone --depth 1 "https://github.com/spbnazaroff-blip/${repo}.git" "$dest"
+}
+
 mkdir -p "$BACKUP"
 
 echo "=== QUEEN CANONICAL RELEASE ==="
 echo "BACKUP=$BACKUP"
 
-git clone --depth 1 git@github.com:spbnazaroff-blip/queen.git "$TMP/queen"
-git clone --depth 1 git@github.com:spbnazaroff-blip/clientra.git "$TMP/clientra"
+clone_repo queen "$TMP/queen"
+clone_repo clientra "$TMP/clientra"
 
 QUEEN_SHA="$(git -C "$TMP/queen" rev-parse HEAD)"
 CLIENTRA_SHA="$(git -C "$TMP/clientra" rev-parse HEAD)"
