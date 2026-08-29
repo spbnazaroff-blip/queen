@@ -74,7 +74,6 @@ function queen_header($title, $active)
     <link rel="apple-touch-icon" href="<?=queen_h(QUEEN_LOGO_URL)?>">
     <link rel="stylesheet" href="assets/css/site.css?v=20260727-2">
     <link rel="stylesheet" href="assets/css/gold-theme.css?v=20260731-2">
-    <link rel="stylesheet" href="assets/css/development-notice.css?v=1.0">
 </head>
 <body data-api-url="<?=queen_h(QUEEN_CLIENTRA_API)?>" data-booking-url="<?=queen_h(QUEEN_BOOKING_URL)?>">
 <header class="site-header">
@@ -92,14 +91,6 @@ function queen_header($title, $active)
         <button class="button button-dark header-book js-book" type="button" data-book-url="<?=queen_h(QUEEN_BOOKING_URL)?>">Записаться</button>
     </div>
 </header>
-<?php if (!queen_is_production()): ?>
-<div class="project-development-notice" role="status">
-    <div class="shell project-development-notice__inner">
-        <strong>TEST</strong>
-        <span>Тестовая версия Queen. Production: queen.denisnazarov.online</span>
-    </div>
-</div>
-<?php endif; ?>
 <main>
 <?php
 }
@@ -124,7 +115,7 @@ function queen_footer()
             <button class="footer-link js-book" type="button" data-book-url="<?=queen_h(QUEEN_BOOKING_URL)?>">Онлайн-запись</button>
         </div>
     </div>
-    <div class="shell footer-bottom"><span>© <?=date('Y')?> Queen</span><span>Онлайн-запись работает на Clientra</span></div>
+    <div class="shell footer-bottom"><span>© <?=date('Y')?> Queen</span><span>Санкт-Петербург · проспект Маршала Жукова, 54/6</span></div>
 </footer>
 
 <div class="booking-modal" data-booking-modal aria-hidden="true">
