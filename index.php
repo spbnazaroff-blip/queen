@@ -26,7 +26,7 @@ queen_header('Главная','home');
 
 <section class="section">
     <div class="shell">
-        <div class="section-head"><div><p class="eyebrow">Всё в одном месте</p><h2>Направления студии</h2></div><p>Услуги и цены автоматически обновляются из Clientra и привязаны к конкретным мастерам.</p></div>
+        <div class="section-head"><div><p class="eyebrow">Всё в одном месте</p><h2>Направления студии</h2></div><p>Выберите направление, познакомьтесь со специалистами и найдите услугу, которая подходит именно вам.</p></div>
         <div class="category-grid">
             <a class="category-card" href="services.php" data-letter="H"><span class="icon">✦</span><h3>Волосы</h3><p>Стрижки, укладки, окрашивание и уход.</p></a>
             <a class="category-card" href="services.php" data-letter="N"><span class="icon">◇</span><h3>Маникюр и педикюр</h3><p>Уход, покрытие и аккуратная работа с формой.</p></a>
@@ -47,12 +47,12 @@ queen_header('Главная','home');
 
 <section class="section section-dark">
     <div class="shell">
-        <div class="section-head"><div><p class="eyebrow" style="color:#e1b6c8">Почему Queen</p><h2>Красота без суеты</h2></div><p>Клиенту легко выбрать своего мастера, увидеть его точный прайс и записаться в несколько касаний.</p></div>
+        <div class="section-head"><div><p class="eyebrow" style="color:#e1b6c8">Почему Queen</p><h2>Красота без суеты</h2></div><p>Выберите своего мастера, заранее посмотрите стоимость и запишитесь на удобное время онлайн.</p></div>
         <div class="feature-grid">
-            <div class="feature-card"><b>Живой график</b><span>На сайте показывается актуальная доступность из Clientra.</span></div>
-            <div class="feature-card"><b>Реальные мастера</b><span>На сайте и в приложении используется одна команда и одинаковые фотографии.</span></div>
-            <div class="feature-card"><b>Точные цены</b><span>У каждого мастера может быть своя цена и длительность одной и той же услуги.</span></div>
-            <div class="feature-card"><b>Быстрая запись</b><span>Специалист → услуга → дата и время → контакты клиента.</span></div>
+            <div class="feature-card"><b>Удобная запись</b><span>Выбирайте свободное время онлайн — без лишних звонков.</span></div>
+            <div class="feature-card"><b>Своя команда</b><span>Познакомьтесь со специалистами Queen и выберите мастера по направлению и стилю работы.</span></div>
+            <div class="feature-card"><b>Понятный прайс</b><span>Стоимость услуг собрана в одном месте и доступна до записи.</span></div>
+            <div class="feature-card"><b>Всё в несколько шагов</b><span>Специалист → услуга → удобное время → подтверждение записи.</span></div>
         </div>
     </div>
 </section>
