@@ -14,21 +14,38 @@ const QUEEN_PHONE = '+7 (911) 158-14-42';
 const QUEEN_PHONE_HREF = 'tel:+79111581442';
 const QUEEN_VK_URL = 'https://vk.ru/luibovstudio';
 const QUEEN_LOGO_URL = 'assets/images/brand/logo-queen.png';
-const QUEEN_PRODUCTION_HOST = 'queen.denisnazarov.online';
 const QUEEN_SITE_URL = 'https://queen.denisnazarov.online/';
 const QUEEN_SOCIAL_IMAGE_URL = 'https://queen.denisnazarov.online/assets/images/og-queen.php?v=20260728-1';
 
-function queen_is_production()
+function queen_page_url($active)
 {
-    $host = isset($_SERVER['HTTP_HOST']) ? strtolower((string)$_SERVER['HTTP_HOST']) : '';
-    $host = preg_replace('/:\d+$/', '', $host);
-    return $host === QUEEN_PRODUCTION_HOST;
+    $paths = array(
+        'home' => '',
+        'services' => 'services.php',
+        'masters' => 'masters.php',
+        'solarium' => 'solarium.php',
+        'contacts' => 'contacts.php',
+    );
+    return QUEEN_SITE_URL . (isset($paths[$active]) ? $paths[$active] : '');
+}
+
+function queen_page_description($active)
+{
+    $descriptions = array(
+        'home' => 'Студия красоты Queen в Санкт-Петербурге: волосы, маникюр и педикюр, шугаринг, массаж и солярий. Онлайн-запись к специалистам.',
+        'services' => 'Услуги и цены студии красоты Queen в Санкт-Петербурге. Выберите направление, специалиста и удобное время.',
+        'masters' => 'Специалисты студии красоты Queen в Санкт-Петербурге. Познакомьтесь с командой и запишитесь онлайн.',
+        'solarium' => 'Солярий Queen в Санкт-Петербурге: удобная запись, выбор продолжительности сеанса и рекомендации перед посещением.',
+        'contacts' => 'Контакты студии красоты Queen в Санкт-Петербурге: адрес, телефон, ВКонтакте и онлайн-запись.',
+    );
+    return isset($descriptions[$active]) ? $descriptions[$active] : $descriptions['home'];
 }
 
 function queen_header($title, $active)
 {
     $fullTitle = $title === 'Главная' ? 'Студия красоты Queen — Санкт-Петербург' : $title . ' — студия красоты Queen';
-    $description = 'Студия красоты Queen в Санкт-Петербурге: волосы, маникюр и педикюр, шугаринг, массаж и солярий. Удобная онлайн-запись к специалистам.';
+    $description = queen_page_description($active);
+    $canonical = queen_page_url($active);
     $nav = array(
         'home'=>array('Главная','index.php'),
         'services'=>array('Услуги и цены','services.php'),
@@ -43,15 +60,16 @@ function queen_header($title, $active)
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="<?=queen_h($description)?>">
-    <meta name="theme-color" content="#0a0a09">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="theme-color" content="#090909">
     <title><?=queen_h($fullTitle)?></title>
 
-    <link rel="canonical" href="<?=queen_h(QUEEN_SITE_URL)?>">
+    <link rel="canonical" href="<?=queen_h($canonical)?>">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
     <meta property="og:site_name" content="Queen — студия красоты">
-    <meta property="og:url" content="<?=queen_h(QUEEN_SITE_URL)?>">
+    <meta property="og:url" content="<?=queen_h($canonical)?>">
     <meta property="og:title" content="<?=queen_h($fullTitle)?>">
     <meta property="og:description" content="<?=queen_h($description)?>">
     <meta property="og:image" content="<?=queen_h(QUEEN_SOCIAL_IMAGE_URL)?>">
@@ -66,14 +84,10 @@ function queen_header($title, $active)
     <meta name="twitter:description" content="<?=queen_h($description)?>">
     <meta name="twitter:image" content="<?=queen_h(QUEEN_SOCIAL_IMAGE_URL)?>">
 
-    <?php if (!queen_is_production()): ?>
-    <meta name="robots" content="noindex,nofollow,noarchive">
-    <?php endif; ?>
-
     <link rel="icon" type="image/png" href="<?=queen_h(QUEEN_LOGO_URL)?>">
     <link rel="apple-touch-icon" href="<?=queen_h(QUEEN_LOGO_URL)?>">
     <link rel="stylesheet" href="assets/css/site.css?v=20260727-2">
-    <link rel="stylesheet" href="assets/css/gold-theme.css?v=20260731-2">
+    <link rel="stylesheet" href="assets/css/gold-theme.css?v=20260829-1">
 </head>
 <body data-api-url="<?=queen_h(QUEEN_CLIENTRA_API)?>" data-booking-url="<?=queen_h(QUEEN_BOOKING_URL)?>">
 <header class="site-header">
@@ -105,7 +119,7 @@ function queen_footer()
             <a class="brand footer-brand" href="index.php"><span class="brand-mark"><img src="<?=queen_h(QUEEN_LOGO_URL)?>" alt="" width="48" height="48"></span><span><strong>QUEEN</strong><small>студия красоты</small></span></a>
             <p>Красота, уход и время для себя в Санкт-Петербурге.</p>
         </div>
-        <div><strong>Навигация</strong><a href="services.php">Услуги и цены</a><a href="masters.php">Специалисты</a><a href="solarium.php">Солярий</a></div>
+        <div><strong>Навигация</strong><a href="services.php">Услуги и цены</a><a href="masters.php">Специалисты</a><a href="solarium.php">Солярий</a><a href="contacts.php">Контакты</a></div>
         <div>
             <strong>Контакты</strong>
             <span><?=queen_h(QUEEN_ADDRESS)?></span>
