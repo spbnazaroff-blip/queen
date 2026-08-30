@@ -78,10 +78,10 @@
     var type=roleType(member);
     var services=(member.services||[]).slice(0,3);
     var photo=member.avatar_url
-      ?'<img src="'+escapeHtml(member.avatar_url)+'" alt="'+escapeHtml(member.name)+'" loading="lazy">'
+      ?'<img src="'+escapeHtml(member.avatar_url)+'" alt="'+escapeHtml(member.name)+'" loading="lazy" decoding="async">'
       :'<span class="master-initials">'+escapeHtml(initials(member))+'</span>';
     var chips=services.map(function(service){return'<span>'+escapeHtml(service.name)+'</span>';}).join('');
-    if(!chips)chips='<span>Прайс уточняется</span>';
+    if(!chips)chips='<span>Услуги и запись</span>';
     return'<article class="master-card">'+
       '<div class="master-photo">'+photo+'</div>'+
       '<div class="master-body"><small>'+escapeHtml(member.specialty||'Специалист')+'</small><h3>'+escapeHtml(member.name)+'</h3>'+
@@ -125,8 +125,10 @@
     document.querySelectorAll('[data-queen-services]').forEach(function(container){
       container.innerHTML=categories.map(function(category){
         var rows=groups[category].map(function(service){
+          var duration=Number(service.duration_minutes||0);
           var price=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0}).format(Number(service.price||0))+' ₽';
-          return'<div class="price-row"><div><strong>'+escapeHtml(service.name)+'</strong><small>'+escapeHtml(service.duration_minutes||'')+' мин.</small></div><b>'+price+'</b><button class="mini-book js-book" type="button" data-book-url="'+escapeHtml(service.booking_url||bookingUrl)+'">Записаться</button></div>';
+          var durationLabel=duration>0?duration+' мин.':'';
+          return'<div class="price-row"><div><strong>'+escapeHtml(service.name)+'</strong><small>'+escapeHtml(durationLabel)+'</small></div><b>'+price+'</b><button class="mini-book js-book" type="button" data-book-url="'+escapeHtml(service.booking_url||bookingUrl)+'">Записаться</button></div>';
         }).join('');
         return'<section class="service-group"><h2>'+escapeHtml(category)+'</h2><div class="price-list">'+rows+'</div></section>';
       }).join('');
@@ -135,19 +137,33 @@
 
   var menuToggle=document.querySelector('[data-menu-toggle]');
   var mainNav=document.querySelector('[data-main-nav]');
+  function closeMenu(){
+    if(!menuToggle||!mainNav)return;
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  }
   if(menuToggle&&mainNav){
-    menuToggle.addEventListener('click',function(){mainNav.classList.toggle('open');});
-    mainNav.addEventListener('click',function(){mainNav.classList.remove('open');});
+    menuToggle.addEventListener('click',function(){
+      var open=!mainNav.classList.contains('open');
+      mainNav.classList.toggle('open',open);
+      menuToggle.setAttribute('aria-expanded',open?'true':'false');
+    });
+    mainNav.addEventListener('click',closeMenu);
   }
 
   var modal=document.querySelector('[data-booking-modal]');
   var frame=document.querySelector('[data-booking-frame]');
-  function openBooking(url){
+  var lastBookingTrigger=null;
+  function openBooking(url,trigger){
     if(!modal||!frame){window.open(url||bookingUrl,'_blank','noopener');return;}
+    lastBookingTrigger=trigger||null;
     frame.src=url||bookingUrl;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');
     body.classList.add('modal-open');
+    closeMenu();
+    var closeButton=modal.querySelector('[data-booking-close]');
+    if(closeButton&&closeButton.focus)closeButton.focus();
   }
   function closeBooking(){
     if(!modal||!frame)return;
@@ -155,13 +171,15 @@
     modal.setAttribute('aria-hidden','true');
     frame.src='about:blank';
     body.classList.remove('modal-open');
+    if(lastBookingTrigger&&lastBookingTrigger.focus)lastBookingTrigger.focus();
+    lastBookingTrigger=null;
   }
   document.addEventListener('click',function(event){
     var button=event.target.closest('.js-book');
-    if(button){event.preventDefault();openBooking(button.getAttribute('data-book-url')||bookingUrl);}
+    if(button){event.preventDefault();openBooking(button.getAttribute('data-book-url')||bookingUrl,button);}
     if(event.target.closest('[data-booking-close]'))closeBooking();
   });
-  document.addEventListener('keydown',function(event){if(event.key==='Escape')closeBooking();});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape'){closeBooking();closeMenu();}});
 
   renderTeam([]);
   renderServices([]);
