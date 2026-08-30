@@ -127,6 +127,7 @@ function queen_header($title, $active)
     <link rel="stylesheet" href="assets/css/gold-theme.css?v=20260829-1">
     <link rel="stylesheet" href="assets/css/premium-v2.css?v=20260830-1">
     <link rel="stylesheet" href="assets/css/premium-pages.css?v=20260830-1">
+    <link rel="stylesheet" href="assets/css/mobile-polish.css?v=20260830-2">
 
     <script type="application/ld+json"><?=json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)?></script>
 </head>
