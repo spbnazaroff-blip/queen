@@ -21,13 +21,13 @@ queen_header('Главная','home');
         </div>
         <div class="hero-editorial" aria-label="Команда и атмосфера Queen">
             <div class="hero-photo hero-photo-main">
-                <img src="assets/images/unsorted/evgeniya-mazurik.png" alt="Специалист студии красоты Queen">
+                <img src="assets/images/unsorted/lubov-nazarova.png" alt="Любовь Назарова — специалист студии красоты Queen">
             </div>
             <div class="hero-photo hero-photo-small hero-photo-top">
-                <img src="assets/images/unsorted/ekaterina-nazarova.png" alt="Специалист студии Queen">
+                <img src="assets/images/unsorted/ekaterina-nazarova.png" alt="Екатерина Назарова — специалист студии Queen">
             </div>
             <div class="hero-photo hero-photo-small hero-photo-bottom">
-                <img src="assets/images/unsorted/lubov-nazarova.png" alt="Специалист студии Queen">
+                <img src="assets/images/unsorted/evgeniya-mazurik.png" alt="Евгения Мазурик — специалист студии Queen">
             </div>
             <div class="hero-seal" aria-hidden="true"><span>Q</span><small>BEAUTY<br>STUDIO</small></div>
             <div class="panel-card hero-panel-card"><small>Санкт-Петербург</small><strong>Queen — время для себя</strong><span>Маршала Жукова, 54/6</span></div>
