@@ -112,8 +112,8 @@ function queen_header($title, $active)
     <meta property="og:image" content="<?=queen_h(QUEEN_SOCIAL_IMAGE_URL)?>">
     <meta property="og:image:secure_url" content="<?=queen_h(QUEEN_SOCIAL_IMAGE_URL)?>">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="315">
     <meta property="og:image:alt" content="Queen — студия красоты в Санкт-Петербурге">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -126,6 +126,7 @@ function queen_header($title, $active)
     <link rel="stylesheet" href="assets/css/site.css?v=20260727-2">
     <link rel="stylesheet" href="assets/css/gold-theme.css?v=20260829-1">
     <link rel="stylesheet" href="assets/css/premium-v2.css?v=20260830-1">
+    <link rel="stylesheet" href="assets/css/premium-pages.css?v=20260830-1">
 
     <script type="application/ld+json"><?=json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)?></script>
 </head>
