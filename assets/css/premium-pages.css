@@ -1,0 +1,66 @@
+/* Queen premium inner pages */
+.page-benefits-section{padding:62px 0 18px}
+.page-benefits-grid article{min-height:205px}
+.services-list-section{padding-top:58px}
+.services-section-head{margin-bottom:28px}
+.service-groups{gap:22px}
+.service-group{position:relative;overflow:hidden}
+.service-group:after{content:"Q";position:absolute;right:-22px;top:-55px;color:rgba(151,112,42,.035);font:150px/1 Georgia,serif;pointer-events:none}
+.service-group>*{position:relative;z-index:1}
+.price-row strong{font-size:16px}
+.price-row small{display:block;margin-top:3px;font-size:12px}
+
+.masters-intro-section{padding:70px 0 20px}
+.masters-intro{padding-bottom:54px}
+.team-page-section{padding-top:60px}
+.masters-cta-panel{width:100%;background:radial-gradient(circle at 82% 20%,rgba(201,164,91,.16),transparent 26%),linear-gradient(135deg,#16140f,#050505 72%)}
+
+.contact-grid-premium{grid-template-columns:.92fr 1.08fr;gap:26px;align-items:stretch}
+.contact-card-premium{height:100%;padding:34px}
+.contact-card-premium h2{font-size:36px}
+.contact-actions{margin-top:26px}
+.map-placeholder-premium{min-height:520px;background:
+  radial-gradient(circle at 72% 22%,rgba(255,255,255,.33),transparent 25%),
+  linear-gradient(145deg,#dfcfaf,#b99a5d)}
+.map-copy{max-width:360px}
+.map-pin{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 20px;border-radius:50%;background:#11100c;color:#d9bb72;font-size:29px;box-shadow:0 15px 40px rgba(53,38,12,.2)}
+.map-placeholder-premium b{display:block;margin-bottom:12px;font-size:42px}
+.map-placeholder-premium p{margin:0 0 22px;color:#594a30}
+.map-placeholder-premium .eyebrow{margin-bottom:8px;color:#755821}
+.contacts-info-section{padding-top:72px}
+
+.solar-hero-premium{gap:30px}
+.solar-content-card{padding:34px}
+.solar-content-card h2{font-size:38px}
+.solar-visual{display:grid;place-items:center;isolation:isolate}
+.solar-visual:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(255,230,166,.25);border-radius:50%;box-shadow:0 0 0 38px rgba(255,226,150,.035),0 0 0 76px rgba(255,226,150,.025)}
+.solar-badge{position:relative;z-index:2;width:170px;height:170px;border-radius:50%;display:grid;place-items:center;background:rgba(5,5,4,.76);border:1px solid rgba(235,203,124,.48);box-shadow:0 24px 65px rgba(0,0,0,.28);backdrop-filter:blur(8px)}
+.solar-badge span{font:88px/.8 Georgia,serif;color:#dfbf70}
+.solar-badge small{position:absolute;bottom:28px;text-align:center;color:#ba9f61;font-size:8px;font-weight:800;letter-spacing:.16em}
+.solarium-guide-grid article{min-height:235px}
+
+@media(max-width:960px){
+  .contact-grid-premium{grid-template-columns:1fr}
+  .map-placeholder-premium{min-height:390px}
+  .team-page-section{padding-top:38px}
+}
+
+@media(max-width:640px){
+  .page-benefits-section{padding-top:48px;padding-bottom:6px}
+  .services-list-section{padding-top:46px}
+  .masters-intro-section{padding-top:52px}
+  .masters-intro{padding-bottom:40px}
+  .team-page-section{padding-top:35px}
+  .contact-card-premium{padding:24px}
+  .contact-card-premium h2{font-size:31px}
+  .map-placeholder-premium{min-height:340px}
+  .map-placeholder-premium b{font-size:35px}
+  .contacts-info-section{padding-top:60px}
+  .solar-content-card{padding:25px}
+  .solar-content-card h2{font-size:32px}
+  .solar-visual{min-height:350px}
+  .solar-visual:before{width:220px;height:220px}
+  .solar-badge{width:140px;height:140px}
+  .solar-badge span{font-size:72px}
+  .solar-badge small{bottom:22px}
+}
